@@ -1,4 +1,4 @@
-defmodule DiscussWeb.PageController do
+defmodule DiscussWeb.Pages.PageController do
   use DiscussWeb, :controller
 
   def index(conn, _params) do

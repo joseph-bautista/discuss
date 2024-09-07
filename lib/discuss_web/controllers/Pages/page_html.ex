@@ -1,4 +1,4 @@
-defmodule DiscussWeb.PageHTML do
+defmodule DiscussWeb.Pages.PageHTML do
   @moduledoc """
   This module contains pages rendered by PageController.
 
