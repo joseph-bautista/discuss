@@ -1,0 +1,6 @@
+<.form :let={f} for={@changeset} action={~p"/topics"}>
+    <div class="form-group">
+        <.input field={f[:title]} type="text" placeholder="Title" class="form-control" />
+    </div>
+    <.button class="btn btn-primary">Save Topic</.button>
+</.form>

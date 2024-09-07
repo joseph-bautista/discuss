@@ -20,6 +20,9 @@
         <a href="/" class="brand-logo">Discussions</a>
       </div>
     </nav>
-    <%= @inner_content %>
+    <div class="container">
+      <.flash_group flash={@flash} />
+      <%= @inner_content %>
+    </div>
   </body>
 </html>
