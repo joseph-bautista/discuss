@@ -19,7 +19,7 @@ defmodule DiscussWeb.Topics.TopicController do
     changeset = Topic.changeset(%Topic{}, topic)
 
     case Repo.insert(changeset) do
-      {:ok, post} ->
+      {:ok, _post} ->
         conn
         |> put_flash(:info, "Topic Created")
         |> redirect(to: "/topics")
