@@ -8,7 +8,10 @@
                 <.link href={~p"/topics/#{topic.id}/edit"}>
                   Edit
                 </.link>
-                
+
+                <.link href={~p"/topics/#{topic.id}"} method="delete">
+                    Delete
+                </.link>
             </div>
         </li>
     <% end %>
