@@ -14,11 +14,17 @@ defmodule DiscussWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", DiscussWeb do
+  scope "/topics", DiscussWeb do
     pipe_through :browser
 
-    # get "/", Pages.PageController, :index
-    resources "/topics", Topics.TopicController
+    resources "/", Topics.TopicController
+  end
+
+  scope "/auth", DiscussWeb do
+    pipe_through :browser
+
+    get "/:provider", Oauth.AuthController, :request
+    get "/:provider/callback", Oauth.AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
