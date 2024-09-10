@@ -19,7 +19,6 @@ defmodule DiscussWeb.Router do
 
     # get "/", Pages.PageController, :index
     resources "/topics", Topics.TopicController
-
   end
 
   # Other scopes may use custom stacks.
