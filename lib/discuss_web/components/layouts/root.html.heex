@@ -19,7 +19,29 @@
   <body class="bg-white">
     <nav class="light-blue">
       <div class="nav-wrapper container">
-        <a href="/" class="brand-logo">Discussions</a>
+        <a href="/" class="brand-logo">
+          Discussions
+        </a>
+        <ul class="right">
+          <%= if @conn.assigns[:user] do %>
+            <li>
+              <.link href={~p"/topics"}>
+                Topics
+              </.link>    
+            </li>
+            <li>
+              <.link href={~p"/signout"}>
+                Logout
+              </.link>
+            </li>
+          <% else %>
+            <li>
+              <.link href={~p"/auth/github"}>
+                Sign in with Github
+              </.link>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </nav>
     <div class="container">

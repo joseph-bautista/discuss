@@ -4,6 +4,8 @@ defmodule DiscussWeb.Topics.TopicController do
   alias Discuss.{Repo, Topic}
 
   def index(conn, _params) do
+    IO.inspect(conn.assigns)
+    IO.puts("++++++")
     topics = Repo.all(Discuss.Topic)
 
     render(conn, :index, topics: topics, layout: false)
