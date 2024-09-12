@@ -23,12 +23,12 @@
           Discussions
         </a>
         <ul class="right">
+          <li>
+            <.link href={~p"/topics"}>
+              Topics
+            </.link>    
+          </li>
           <%= if @conn.assigns[:user] do %>
-            <li>
-              <.link href={~p"/topics"}>
-                Topics
-              </.link>    
-            </li>
             <li>
               <.link href={~p"/signout"}>
                 Logout
