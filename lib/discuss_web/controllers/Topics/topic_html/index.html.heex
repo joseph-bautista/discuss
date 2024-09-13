@@ -3,16 +3,21 @@
 <ul class="collection">
     <%= for topic <- @topics do %>
         <li class="collection-item">
-            <%= topic.title %>
-            <div class="right">
-                <.link href={~p"/topics/#{topic.id}/edit"}>
-                  Edit
-                </.link>
+            <.link href={~p"/topics/#{topic.id}"} method="get">
+                <%= topic.title %>
+            </.link>
+            
+            <%= if @conn.assigns.user && @conn.assigns.user.id == topic.user_id  do %>
+                <div class="right">
+                    <.link href={~p"/topics/#{topic.id}/edit"}>
+                    Edit
+                    </.link>
 
-                <.link href={~p"/topics/#{topic.id}"} method="delete">
-                    Delete
-                </.link>
-            </div>
+                    <.link href={~p"/topics/#{topic.id}"} method="delete">
+                        Delete
+                    </.link>
+                </div>
+            <% end %>
         </li>
     <% end %>
 </ul>
